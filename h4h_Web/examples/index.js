@@ -9,29 +9,29 @@ import Container from './Container'
 const routeMap = {
   'basic': {
     name: 'Overview',
-    component: require('./components/basic').default
+    component: require('./components/overviewHeat').default
   },
   'markers': {
     name: 'Fire',
-    component: require('./components/withMarkers').default
+    component: require('./components/fireHeat').default
   },
   'clickable_markers': {
     name: 'Flooding',
-    component: require('./components/withMarkers').default
+    component: require('./components/floodHeat').default
   },
   'autocomplete': {
     name: 'Trapped',
-    component: require('./components/withMarkers').default
+    component: require('./components/trapHeat').default
   },
   'places': {
     name: 'Search',
     component: require('./components/autocomplete').default
   },
-  /*'heatMap': {
-    name: 'Heat Map',
-    component: require('./components/withHeatMap').default
+  'heatMap': {
+    name: 'Demo',
+    component: require('./components/demo').default
   },
-  'polygons': {
+  /*'polygons': {
     name: 'Polygon',
     component: require('./components/withPolygons').default
   }*/
