@@ -43,6 +43,7 @@ html, body {
           background: color($dominantColor a(80%));
         }
       }
+
       li {
         list-style-type: none;
         padding: 10px 20px;
@@ -51,12 +52,13 @@ html, body {
         }
       }
     }
+
     img {
       position: fixed;
       bottom: 0;
-      height:40px;
-      width:40px;
-      padding: 10px;
+      height: 40px;
+      width: 40px;
+      padding: 20px;
     }
   }
 
@@ -65,11 +67,6 @@ html, body {
     min-height: 100%;
   }
 
-  .stats {
-    flex: .1;
-    min-height: 25%;
-    background-color:pink;
-  }
   .right_side {
     flex: 3;
     order: 2;

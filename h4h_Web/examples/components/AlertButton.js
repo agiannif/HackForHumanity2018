@@ -17,7 +17,7 @@ var bstyles = {
   color: 'white',
   fontSize: '20px',
   fontFamily: 'Open Sans',
-  fontWeight: 'Light',
+  fontWeight: 'lighter',
 }
 
 class AlertButton extends React.Component {

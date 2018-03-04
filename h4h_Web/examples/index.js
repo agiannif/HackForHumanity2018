@@ -5,7 +5,6 @@ import {Router, hashHistory, Redirect, Route, IndexRoute, Link} from 'react-rout
 import styles from './global.styles.css';
 
 import Container from './Container'
-
 const routeMap = {
   'basic': {
     name: 'Overview',
@@ -19,9 +18,15 @@ const routeMap = {
     name: 'Flooding',
     component: require('./components/floodHeat').default
   },
+
   'autocomplete': {
     name: 'Trapped',
     component: require('./components/trapHeat').default
+  },
+
+  'polygons': {
+    name: 'First Responders',
+    component: require('./components/withPolygons').default
   },
 
   'places': {
