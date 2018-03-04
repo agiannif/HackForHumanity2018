@@ -12,10 +12,6 @@ const Contents = React.createClass({
     }
   },
 
-  onMapReady: function(mapProps, map) {
-    this.searchNearby(map, map.center);
-  },
-
   onSubmit: function(e) {
     e.preventDefault();
   },
@@ -65,79 +61,6 @@ const Contents = React.createClass({
     const props = this.props;
     const {position} = this.state;
 
-    var data = [
-      {
-        "firstName": "Zach",
-        "lastName": "Bellay",
-        "numPeople": "1",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520153541",
-        "latitude": "37.3542",
-        "longitude": "-121.9551"
-      },
-      {
-        "firstName": "Glen",
-        "lastName": "Chandler",
-        "numPeople": "4",
-        "emergencyLevel": "1",
-        "fire": "true",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520143541",
-        "latitude": "37.3539",
-        "longitude": "-121.9552"
-      },
-      {
-        "firstName": "Bob",
-        "lastName": "Jones",
-        "numPeople": "10",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520131541",
-        "latitude": "37.3545",
-        "longitude": "-121.9550"
-      },
-      {
-        "firstName": "Alex",
-        "lastName": "Seto",
-        "numPeople": "4",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "false",
-        "trapped": "false",
-        "child": "false",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520158941",
-        "latitude": "37.3544",
-        "longitude": "-121.9550"
-      }
-    ]
-
-    var tableData = <table><tr><td>Name</td><td>Name2</td><td>Name3</td></tr></table>;
-
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
@@ -154,9 +77,6 @@ const Contents = React.createClass({
           <div>
             <div>Lat: {position && position.lat()}</div>
             <div>Lng: {position && position.lng()}</div>
-          </div>
-          <div>
-            <div>{tableData}</div>
           </div>
         </div>
         <div className={styles.right}>
