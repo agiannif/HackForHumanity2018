@@ -12,6 +12,10 @@ const Contents = React.createClass({
     }
   },
 
+  onMapReady: function(mapProps, map) {
+    this.searchNearby(map, map.center);
+  },
+
   onSubmit: function(e) {
     e.preventDefault();
   },
@@ -78,6 +82,11 @@ const Contents = React.createClass({
             <div>Lat: {position && position.lat()}</div>
             <div>Lng: {position && position.lng()}</div>
           </div>
+          <ul>
+            <li>
+              Test
+            </li>
+          </ul>
         </div>
         <div className={styles.right}>
           <Map {...props}
