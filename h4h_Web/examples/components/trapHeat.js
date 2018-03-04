@@ -15,13 +15,10 @@ const WithHeatMap = React.createClass({
       'rgba(0, 255, 255, 1)',
       'rgba(0, 191, 255, 1)',
       'rgba(0, 127, 255, 1)',
-      'rgba(0, 63, 255, 1)',
-      'rgba(0, 0, 255, 1)',
-      'rgba(0, 0, 223, 1)',
-      'rgba(0, 0, 191, 1)',
-      'rgba(0, 0, 159, 1)',
-      'rgba(0, 0, 127, 1)',
-      'rgba(63, 0, 91, 1)',
+      'rgba(0, 204, 0, 1)',
+      'rgba(255, 255, 0, 1)',
+      'rgba(255, 153, 51, 1)',
+      'rgba(255, 128, 0, 1)',
       'rgba(127, 0, 63, 1)',
       'rgba(191, 0, 31, 1)',
       'rgba(255, 0, 0, 1)'
@@ -29,27 +26,25 @@ const WithHeatMap = React.createClass({
 
     var center = {lat: 37.3496, lng: -121.9390};
     var positions = [];
-for(var i = 0; i < 500; ++i)
+for(var i = 0; i < 3; ++i)
 {
-  var pos1 = center.lat + ((0.001)*((Math.random() * 100) ));
-  var pos2 = center.lng + ((0.001)*((Math.random() * 100) ));
-
-  var temp = Math.random()*100;
-  for (var j = 0; j < 1; ++j)
-  {
-    positions.push({lat: pos1, lng: pos2});
-  }
-
+  var lat1 = center.lat + ((0.001)*((Math.random() * 85) ));
+  var lat2 = center.lat - ((0.001)*((Math.random() * 70) ));
+  var long1 = center.lng + ((0.001)*((Math.random() * 100) ));
+  var long2 = center.lng - ((0.001)*((Math.random() * 100) ));
+  positions.push({lat: lat1, lng: long1});
+  positions.push({lat: lat2, lng: long1});
+  positions.push({lat: lat2, lng: long2});
 }
 
     return (
       <Map google={this.props.google}
           style={{width: '100%', height: '100%', position: 'relative'}}
           className={'map'}
-          zoom={14}>
+          zoom={12}>
         <HeatMap
           gradient={gradient}
-          radius={20}
+          radius={50}
           opacity={0.5}
           positions={positions}
         />
