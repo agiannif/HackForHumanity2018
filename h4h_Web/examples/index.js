@@ -8,22 +8,22 @@ import Container from './Container'
 
 const routeMap = {
   'basic': {
-    name: 'Simple',
+    name: 'Status',
     component: require('./components/basic').default
   },
   'markers': {
-    name: 'Marker',
+    name: 'Water',
     component: require('./components/withMarkers').default
   },
   'clickable_markers': {
-    name: 'Clickable markers',
+    name: 'Food',
     component: require('./components/clickableMarkers').default
   },
   'places': {
-    name: 'Google places',
+    name: 'Medicine',
     component: require('./components/places').default
   },
-  'autocomplete': {
+  /*'autocomplete': {
     name: 'Autocomplete',
     component: require('./components/autocomplete').default
   },
@@ -34,7 +34,7 @@ const routeMap = {
   'polygons': {
     name: 'Polygon',
     component: require('./components/withPolygons').default
-  }
+  }*/
 }
 
 const createElement = (Component, props) => {

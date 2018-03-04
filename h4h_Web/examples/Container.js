@@ -65,7 +65,7 @@ export const Container = React.createClass({
           <div className={styles.stats}>
           </div>
         </div>
-        <img src="logo.png"></img>
+        <img src="/Users/agiannif/Documents/GitHub/HackForHumanity2018/h4h Web/logo.png"></img>
       </div>
     )
   }
