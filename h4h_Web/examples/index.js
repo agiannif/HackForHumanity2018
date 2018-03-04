@@ -8,19 +8,19 @@ import Container from './Container'
 
 const routeMap = {
   'basic': {
-    name: 'Status',
+    name: 'Map Status',
     component: require('./components/basic').default
   },
   'markers': {
-    name: 'Water',
+    name: 'Elderly',
     component: require('./components/withMarkers').default
   },
   'clickable_markers': {
-    name: 'Food',
+    name: 'Disabled',
     component: require('./components/clickableMarkers').default
   },
   'places': {
-    name: 'Medicine',
+    name: 'Statistics',
     component: require('./components/places').default
   },
   /*'autocomplete': {

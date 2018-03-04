@@ -17,11 +17,11 @@ html, body {
 .wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: relative;
   min-height: 100vh;
 
   .list {
-    flex: .7;
     order: 1;
     margin: 0;
     padding: 0;
@@ -49,17 +49,28 @@ html, body {
         }
       }
     }
+    img {
+      position: fixed;
+      bottom: 0;
+      height:50px;
+      width:50px;
+      padding: 10px;
+    }
   }
 
   .content {
-    flex: 3;
-    order: 2;
-    height: 500px;
-    position:relative;
+    position: relative;
     min-height: 100%;
   }
 
   .stats {
+    flex: .1;
+    min-height: 25%;
     background-color:pink;
+  }
+  .right_side {
+    flex: 3;
+    order: 2;
+    flex-direction: column;
   }
 }

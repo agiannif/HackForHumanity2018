@@ -58,15 +58,14 @@ export const Container = React.createClass({
                 )
               })}
             </ul>
+            <img src="https://i.imgur.com/T29lC0U.png" />
           </div>
-          <div className={styles.content}>
-            {c}
-          </div>
-          <div className={styles.stats}>
-          hello
+          <div className={styles.right_side}>
+            <div className={styles.content}>
+              {c}
+            </div>
           </div>
         </div>
-        <img src="logo.png"></img>
       </div>
     )
   }
