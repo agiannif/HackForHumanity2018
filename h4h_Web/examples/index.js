@@ -9,29 +9,42 @@ import Container from './Container'
 const routeMap = {
   'basic': {
     name: 'Overview',
-    component: require('./components/withHeatMap').default
+    component: require('./components/overviewHeat').default
   },
   'markers': {
     name: 'Fire',
-    component: require('./components/withHeatMap').default
+    component: require('./components/fireHeat').default
   },
   'clickable_markers': {
     name: 'Flooding',
-    component: require('./components/withHeatMap').default
+    component: require('./components/floodHeat').default
   },
   'autocomplete': {
     name: 'Trapped',
-    component: require('./components/withHeatMap').default
+    component: require('./components/trapHeat').default
   },
   'places': {
     name: 'Search',
     component: require('./components/autocomplete').default
   },
-  'polygons': {
-    name: 'First Response',
-    component: require('./components/withPolygons').default
+
+  'heatMap': {
+    name: 'Demo',
+    component: require('./components/demo').default
   }
 }
+  /*'polygons': {
+=======
+  'polygons': {
+<<<<<<< HEAD
+    name: 'First Response',
+=======
+>>>>>>> 5dc6b8650b711382b9bc6070371bb97c790882cb
+    name: 'Polygon',
+>>>>>>> 805b0312e9de324f017aea4ef0086741874e7402
+    component: require('./components/withPolygons').default
+  }
+}*/
 
 const createElement = (Component, props) => {
   const pathname = props.location.pathname.replace('/', '')
