@@ -72,7 +72,7 @@ const Contents = React.createClass({
             <input
               className={styles.button}
               type='submit'
-              value='Go' />
+              value='Search' />
           </form>
           <div>
             <div>Lat: {position && position.lat()}</div>
