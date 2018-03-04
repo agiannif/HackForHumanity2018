@@ -8,7 +8,9 @@ const Contents = React.createClass({
   getInitialState() {
     return {
       place: null,
-      position: null
+      position: null,
+      items: [{"firstName": "Sam"}],
+      isLoaded: false
     }
   },
 
@@ -19,10 +21,6 @@ const Contents = React.createClass({
   onSubmit: function(e) {
     e.preventDefault();
 
-  },
-
-  componentDidMount: function() {
-    this.renderAutoComplete();
   },
 
   componentDidUpdate(prevProps) {
@@ -62,80 +60,142 @@ const Contents = React.createClass({
     })
   },
 
+  checkForData(){
+    console.log('hello');
+    fetch("http://192.168.1.3:55555/")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.items
+        });
+      },
+      (error) => {
+        console.log('errror');
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+    console.log(this.state.items);
+    return null;
+  },
+
+  startDataCheck(){
+    this.checkForData();
+  },
+
+  handleClick(event) {
+    console.log('click');
+    this.checkForData();
+  },
+
+  componentDidMount(){
+    this.startDataCheck();
+    console.log('hey');
+    renderAutoComplete();
+  },
+  // var xhr = new XMLHttpRequest();
+  // var json_obj, status = false;
+  // console.log('hey');
+  // xhr.open("GET","http://192.168.1.3:55555/",true);
+  // xhr.onload = function (e){
+  //   if (xhr.readState === 4){
+  //     if (xhr.status === 200){
+  //       var json_obj = JSON.parse(xhr.responseText);
+  //       status = true;
+  //       this.setState({json_obj});
+  //     }
+  //     else{
+  //       console.error(xhr.statusText);
+  //     }
+  //   }
+  // }.bind(this);
+  // xhr.onerror = function(e){
+  //   console.error(xhr.statusText);
+  // };
+  // xhr.send(null);
+
+
   render: function() {
     const props = this.props;
     const {position} = this.state;
 
-    var data = [
-      {
-        "firstName": "Zach",
-        "lastName": "Bellay",
-        "numPeople": "1",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520153541",
-        "latitude": "37.3542",
-        "longitude": "-121.9551"
-      },
-      {
-        "firstName": "Glen",
-        "lastName": "Chandler",
-        "numPeople": "4",
-        "emergencyLevel": "1",
-        "fire": "true",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520143541",
-        "latitude": "37.3539",
-        "longitude": "-121.9552"
-      },
-      {
-        "firstName": "Bob",
-        "lastName": "Jones",
-        "numPeople": "10",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "true",
-        "trapped": "false",
-        "child": "true",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520131541",
-        "latitude": "37.3545",
-        "longitude": "-121.9550"
-      },
-      {
-        "firstName": "Alex",
-        "lastName": "Seto",
-        "numPeople": "4",
-        "emergencyLevel": "2",
-        "fire": "false",
-        "flood": "false",
-        "earthquake": "false",
-        "trapped": "false",
-        "child": "false",
-        "injury": "false",
-        "disability": "false",
-        "elderly": "false",
-        "time": "1520158941",
-        "latitude": "37.3544",
-        "longitude": "-121.9550"
-      }
-    ];
+    var data = this.state.items;
+    //[
+    //   {
+    //     "firstName": "Sam",
+    //     "lastName": "Bellay",
+    //     "numPeople": "1",
+    //     "emergencyLevel": "2",
+    //     "fire": "false",
+    //     "flood": "false",
+    //     "earthquake": "true",
+    //     "trapped": "false",
+    //     "child": "true",
+    //     "injury": "false",
+    //     "disability": "false",
+    //     "elderly": "false",
+    //     "time": "1520153541",
+    //     "latitude": "37.3542",
+    //     "longitude": "-121.9551"
+    //   },
+    //   {
+    //     "firstName": "Glen",
+    //     "lastName": "Chandler",
+    //     "numPeople": "4",
+    //     "emergencyLevel": "1",
+    //     "fire": "true",
+    //     "flood": "false",
+    //     "earthquake": "true",
+    //     "trapped": "false",
+    //     "child": "true",
+    //     "injury": "false",
+    //     "disability": "false",
+    //     "elderly": "false",
+    //     "time": "1520143541",
+    //     "latitude": "37.3539",
+    //     "longitude": "-121.9552"
+    //   },
+    //   {
+    //     "firstName": "Bob",
+    //     "lastName": "Jones",
+    //     "numPeople": "10",
+    //     "emergencyLevel": "2",
+    //     "fire": "false",
+    //     "flood": "false",
+    //     "earthquake": "true",
+    //     "trapped": "false",
+    //     "child": "true",
+    //     "injury": "false",
+    //     "disability": "false",
+    //     "elderly": "false",
+    //     "time": "1520131541",
+    //     "latitude": "37.3545",
+    //     "longitude": "-121.9550"
+    //   },
+    //   {
+    //     "firstName": "Alex",
+    //     "lastName": "Seto",
+    //     "numPeople": "4",
+    //     "emergencyLevel": "2",
+    //     "fire": "false",
+    //     "flood": "false",
+    //     "earthquake": "false",
+    //     "trapped": "false",
+    //     "child": "false",
+    //     "injury": "false",
+    //     "disability": "false",
+    //     "elderly": "false",
+    //     "time": "1520158941",
+    //     "latitude": "37.3544",
+    //     "longitude": "-121.9550"
+    //   }
+    // ];
+
+
 
     var tableData = <table>
     <tr><td>Name</td><td>{data[0].firstName} {data[0].lastName}</td></tr>
@@ -149,8 +209,7 @@ const Contents = React.createClass({
     <tr><td>Disability?</td><td>{data[0].disability}</td></tr>
     <tr><td>Elderly?</td><td>{data[0].elderly}</td></tr>
     </table>;
-
-
+    //get_request1()
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
@@ -163,7 +222,7 @@ const Contents = React.createClass({
               className={styles.button}
               type='submit'
               value='Search'
-              onClick='get_request()'/>
+              onClick={handleClick}/>
           </form>
           <div>
             <div>Lat: {position && position.lat()}</div>
