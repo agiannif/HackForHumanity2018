@@ -54,21 +54,29 @@ export const Container = React.createClass({
                         activeClassName={styles.active}
                         key={key}>
                     <li>{routeMap[key].name}</li>
+
                   </Link>
                 )
               })}
             </ul>
+            <img src="https://i.imgur.com/T29lC0U.png" />
           </div>
+<<<<<<< HEAD:h4h Web/examples/Container.js
           <div className={styles.content}>
             {c}
+=======
+          <div className={styles.right_side}>
+            <div className={styles.content}>
+              {c}
+            </div>
+>>>>>>> styling:h4h_Web/examples/Container.js
           </div>
         </div>
       </div>
     )
   }
 })
-
-export default GoogleApiWrapper({
+  export default GoogleApiWrapper({
   apiKey: __GAPI_KEY__,
   libraries: ['places','visualization']
 })(Container)

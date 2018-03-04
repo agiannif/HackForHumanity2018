@@ -1,4 +1,8 @@
+<<<<<<< HEAD:h4h Web/examples/styles.module.css
 $dominantColor: grey;
+=======
+$dominantColor: #D64736;
+>>>>>>> styling:h4h_Web/examples/styles.module.css
 $listColor: #333;
 $textColor: #333;
 
@@ -17,18 +21,28 @@ html, body {
 .wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: relative;
   min-height: 100vh;
 
   .list {
+<<<<<<< HEAD:h4h Web/examples/styles.module.css
     flex: .7;
+=======
+>>>>>>> styling:h4h_Web/examples/styles.module.css
     order: 1;
     margin: 0;
     padding: 0;
     background: color($listColor lightness(25%));
+<<<<<<< HEAD:h4h Web/examples/styles.module.css
     border-right: 0px solid color($dominantColor blackness(40%));
     ul {
       font-size: 1em;
+=======
+    border-right: 2px solid color($dominantColor);
+    ul {
+      font-size: 1.2em;
+>>>>>>> styling:h4h_Web/examples/styles.module.css
       padding: 0;
       margin: 0;
       a {
@@ -38,7 +52,11 @@ html, body {
       .active {
         color: color($textColor contrast(90%));
         li {
+<<<<<<< HEAD:h4h Web/examples/styles.module.css
           background: color($listColor a(80%)); /* this is selected color :D */
+=======
+          background: color($dominantColor a(80%));
+>>>>>>> styling:h4h_Web/examples/styles.module.css
         }
       }
       li {
@@ -49,12 +67,28 @@ html, body {
         }
       }
     }
+    img {
+      position: fixed;
+      bottom: 0;
+      height:40px;
+      width:40px;
+      padding: 10px;
+    }
   }
 
   .content {
-    flex: 3;
-    order: 2;
     position: relative;
     min-height: 100%;
+  }
+
+  .stats {
+    flex: .1;
+    min-height: 25%;
+    background-color:pink;
+  }
+  .right_side {
+    flex: 3;
+    order: 2;
+    flex-direction: column;
   }
 }
