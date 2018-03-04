@@ -56,17 +56,10 @@ html, body {
     order: 2;
     height: 500px;
     position:relative;
-    top:0;
-    left:0;
     min-height: 100%;
   }
 
   .stats {
-    flex: 10;
-    order: 2;
-    position:relative;
-    top:500px;
     background-color:pink;
-    min-height: 100%;
   }
 }
