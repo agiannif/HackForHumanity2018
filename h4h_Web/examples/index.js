@@ -36,8 +36,12 @@ const routeMap = {
   /*'polygons': {
 =======
   'polygons': {
+<<<<<<< HEAD
+    name: 'First Response',
+=======
 >>>>>>> 5dc6b8650b711382b9bc6070371bb97c790882cb
     name: 'Polygon',
+>>>>>>> 805b0312e9de324f017aea4ef0086741874e7402
     component: require('./components/withPolygons').default
   }
 }*/
