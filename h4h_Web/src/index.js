@@ -293,8 +293,8 @@ evtNames.forEach(e => (Map.propTypes[camelize(e)] = PropTypes.func));
 Map.defaultProps = {
   zoom: 14,
   initialCenter: {
-    lat: 37.774929,
-    lng: -122.419416
+    lat: 37.3496,
+    lng: -121.9390
   },
   center: {},
   centerAroundCurrentLocation: false,
