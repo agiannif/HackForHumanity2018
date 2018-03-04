@@ -35,7 +35,7 @@ const Container = React.createClass({
     const request = {
        location: center,
        radius: '500',
-       type: ['food']
+       type: ['hospital']
      };
 
     service.nearbySearch(request, (results, status, pagination) => {
