@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
 import GitHubForkRibbon from 'react-github-fork-ribbon'
 
+import Alert from '../src/components/Alert'
+
 let GoogleApiWrapper;
 if (__IS_DEV__) {
   GoogleApiWrapper = require('../src/index').GoogleApiWrapper
@@ -61,15 +63,11 @@ export const Container = React.createClass({
             </ul>
             <img src="https://i.imgur.com/T29lC0U.png" />
           </div>
-<<<<<<< HEAD:h4h Web/examples/Container.js
-          <div className={styles.content}>
-            {c}
-=======
           <div className={styles.right_side}>
+            <Alert></Alert>
             <div className={styles.content}>
               {c}
             </div>
->>>>>>> styling:h4h_Web/examples/Container.js
           </div>
         </div>
       </div>
@@ -80,3 +78,23 @@ export const Container = React.createClass({
   apiKey: __GAPI_KEY__,
   libraries: ['places','visualization']
 })(Container)
+/*
+export class AmberAlert extends React.component(){
+  render() {
+    return (
+      <div>
+        <h4>Amber Alert</h4>
+        <div className={styles.amber}>
+          <form>
+            <label>
+              Name:
+              <input type="text" name="name" />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    )
+  }
+}
+*/
