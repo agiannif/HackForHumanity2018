@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styles from './autocomplete.module.css'
 
 var i = 0;
+var r = false;
 var items = [{
         "firstName": "Sam",
         "lastName": "Bellay",
@@ -32,16 +33,21 @@ class TableData extends React.Component {
   }
 
   flipRight() {
-    i= i+1;
+    if(r){
+      i= (i+1)%4;
+    }
     this.forceUpdate();
   }
 
   flipLeft() {
-    i=i-1;
+    if(r){
+      i= (i+1)%4;
+    }
     this.forceUpdate();
   }
 
   refreshData() {
+    r = true;
     fetch("http://192.168.1.3:55555/")
     .then(function(response) {
       return response.json();
@@ -77,7 +83,6 @@ class TableData extends React.Component {
               <tr><td>Elderly?</td><td>{items[i]['elderly']}</td></tr>
         </table>
         <div className={styles.buttons}>
-          <input type="submit" value="Previous" onClick={this.flipLeft}/>
           <input type="submit" value="Refresh" onClick={this.refreshData}/>
           <input type="submit" value="Next" onClick={this.flipRight}/>
         </div>
