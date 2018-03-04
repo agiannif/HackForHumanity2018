@@ -28,7 +28,7 @@ const routeMap = {
     component: require('./components/autocomplete').default
   },
   'polygons': {
-    name: 'Polygon',
+    name: 'First Response',
     component: require('./components/withPolygons').default
   }
 }
