@@ -54,6 +54,7 @@ export const Container = React.createClass({
                         activeClassName={styles.active}
                         key={key}>
                     <li>{routeMap[key].name}</li>
+
                   </Link>
                 )
               })}
@@ -70,8 +71,7 @@ export const Container = React.createClass({
     )
   }
 })
-
-export default GoogleApiWrapper({
+  export default GoogleApiWrapper({
   apiKey: __GAPI_KEY__,
   libraries: ['places','visualization']
 })(Container)
