@@ -13,7 +13,8 @@ const WithPolygons = React.createClass({
     const polygon = [
       { lat: 37.789411, lng: -122.422116 },
       { lat: 37.785757, lng: -122.421333 },
-      { lat: 37.789352, lng: -122.415346 }
+      { lat: 37.789352, lng: -122.415346 },
+      { lat: 37.789411, lng: -122.420313 }
     ]
 
     return (
