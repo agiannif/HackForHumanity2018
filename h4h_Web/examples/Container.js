@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import {Link} from 'react-router'
 import GitHubForkRibbon from 'react-github-fork-ribbon'
+import Alert from './components/Alert'
+import AlertButton from './components/AlertButton'
 
 let GoogleApiWrapper;
 if (__IS_DEV__) {
@@ -59,17 +61,13 @@ export const Container = React.createClass({
                 )
               })}
             </ul>
+            <AlertButton></AlertButton >
             <img src="https://i.imgur.com/T29lC0U.png" />
           </div>
-<<<<<<< HEAD:h4h Web/examples/Container.js
-          <div className={styles.content}>
-            {c}
-=======
           <div className={styles.right_side}>
             <div className={styles.content}>
               {c}
             </div>
->>>>>>> styling:h4h_Web/examples/Container.js
           </div>
         </div>
       </div>

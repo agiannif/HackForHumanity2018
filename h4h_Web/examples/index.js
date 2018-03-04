@@ -26,11 +26,8 @@ const routeMap = {
   'places': {
     name: 'Search',
     component: require('./components/autocomplete').default
-  },
-  /*'heatMap': {
-    name: 'Heat Map',
-    component: require('./components/withHeatMap').default
-  },
+  }
+  /*
   'polygons': {
     name: 'Polygon',
     component: require('./components/withPolygons').default
