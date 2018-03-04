@@ -21,39 +21,10 @@ var bstyles = {
 class AlertButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {items: [12], isLoaded:false};
-    this.getData();
+    this.state = {items: [], isLoaded:false};
+
     this.handleChange = this.handleChange.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  getData() {
-    console.log('gertdarta');
-    fetch("http://192.168.1.3:55555/")
-    .then(res => res.json())
-    .then(
-      (result) => {
-        this.setState({
-          isLoaded: true,
-          items: result.items
-        });
-      },
-      (error) => {
-        console.log('error')
-        this.setState({
-          isLoaded:true,
-          error
-        });
-      }
-    )
-    console.log(this.state.items)
-  }
-
-  // .then(function(response)
-  //   {
-  //     console.log('hey');
-  //     console.log(response.status);
-  //   });
 
   handleChange(e) {
     console.log('handleChange');
