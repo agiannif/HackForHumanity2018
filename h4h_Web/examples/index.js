@@ -23,12 +23,8 @@ const routeMap = {
     name: 'Trapped',
     component: require('./components/trapHeat').default
   },
-  'places': {
-    name: 'Search',
-    component: require('./components/autocomplete').default
-  },
 
-  'heatMap': {
+  'places': {
     name: 'Demo',
     component: require('./components/demo').default
   }
