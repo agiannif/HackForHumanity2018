@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom'
 
 var dstyles = {
 	height: '40px',
-	width: '100px',
+  position: 'relative',
+	width: '80%',
 	borderRadius: '10px',
-  backgroundColor: '#D64736'
+  backgroundColor: '#D64736',
+  textAlign: 'center'
 };
 var bstyles = {
   height: '100%',
-  width: '100%'
+  width: '100%',
+  background: 'transparent',
+  border: 'transparent',
+  color: 'white',
+
 }
 
 class AlertButton extends React.Component {
@@ -65,40 +71,10 @@ class AlertButton extends React.Component {
       });
   }
 
-  /*
-  handleChange(e) {
-    console.log('handleChange');
-    fetch("http://192.168.1.3:55555/")
-    .then(res => res.json())
-    .then(
-      (data) => {
-        this.setState({
-          isLoaded: true,
-          items: result.items
-        });
-        console.log(this.state.items);
-        console.log('good');
-      },
-      (error) => {
-        console.log('error')
-        this.setState({
-          isLoaded:true,
-          error
-        });
-        console.log(this.state.items);
-        console.log('bad');
-      }
-    )
-    console.log(this.state.items)
-  }*/
-
   render() {
     return (
       <div style={dstyles}>
         <input style={bstyles} type="submit" value="Submit" onClick={this.handleChange}/>
-        <div>
-          {this.state.items}
-        </div>
       </div>
     );
   }

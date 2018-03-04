@@ -25,6 +25,8 @@ html, body {
     order: 1;
     margin: 0;
     padding: 0;
+    text-align: center;
+    justify-content: center;
     background: color($listColor lightness(25%));
     border-right: 2px solid color($dominantColor);
     ul {
