@@ -18,6 +18,7 @@ const Contents = React.createClass({
 
   onSubmit: function(e) {
     e.preventDefault();
+
   },
 
   componentDidMount: function() {
@@ -135,7 +136,16 @@ const Contents = React.createClass({
         "longitude": "-121.9550"
       }
     ]
-
+   function get_request() {
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 200) {
+       data = JSON.parse(this.responseText);
+     }
+   };
+   xhttp.open("GET", "http:192.168.1.3:55555", true);
+   xhttp.send();
+ }
     var tableData = <table><tr><td>Name</td><td>Name2</td><td>Name3</td></tr></table>;
 
     return (
@@ -149,7 +159,8 @@ const Contents = React.createClass({
             <input
               className={styles.button}
               type='submit'
-              value='Search' />
+              value='Search'
+              onClick='get_request()'/>
           </form>
           <div>
             <div>Lat: {position && position.lat()}</div>
