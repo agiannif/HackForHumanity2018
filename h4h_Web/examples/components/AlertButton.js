@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom'
 var dstyles = {
 	height: '40px',
   position: 'relative',
-	width: '80%',
+	width: '100%',
 	borderRadius: '10px',
   backgroundColor: '#D64736',
-  textAlign: 'center'
+  textAlign: 'center',
 };
 var bstyles = {
   height: '100%',
@@ -15,7 +15,9 @@ var bstyles = {
   background: 'transparent',
   border: 'transparent',
   color: 'white',
-
+  fontSize: '20px',
+  fontFamily: 'Open Sans',
+  fontWeight: 'lighter',
 }
 
 class AlertButton extends React.Component {
