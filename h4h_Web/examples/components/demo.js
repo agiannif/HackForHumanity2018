@@ -134,9 +134,21 @@ const Contents = React.createClass({
         "latitude": "37.3544",
         "longitude": "-121.9550"
       }
-    ]
+    ];
 
-    var tableData = <table><tr><td>Name</td><td>Name2</td><td>Name3</td></tr></table>;
+    var tableData = <table>
+    <tr><td>Name</td><td>{data[0].firstName} {data[0].lastName}</td></tr>
+    <tr><td>Number of People</td><td>{data[0].numPeople}</td></tr>
+    <tr><td>Level of Emergency</td><td>{data[0].emergencyLevel}</td></tr>
+    <tr><td>Fire?</td><td>{data[0].fire}</td></tr>
+    <tr><td>Flood?</td><td>{data[0].flood}</td></tr>
+    <tr><td>Trapped?</td><td>{data[0].trapped}</td></tr>
+    <tr><td>Children?</td><td>{data[0].child}</td></tr>
+    <tr><td>Injury?</td><td>{data[0].injury}</td></tr>
+    <tr><td>Disability?</td><td>{data[0].disability}</td></tr>
+    <tr><td>Elderly?</td><td>{data[0].elderly}</td></tr>
+    </table>;
+
 
     return (
       <div className={styles.flexWrapper}>
