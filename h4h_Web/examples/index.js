@@ -27,15 +27,20 @@ const routeMap = {
     name: 'Search',
     component: require('./components/autocomplete').default
   },
+
   'heatMap': {
     name: 'Demo',
     component: require('./components/demo').default
-  },
+  }
+}
   /*'polygons': {
+=======
+  'polygons': {
+>>>>>>> 5dc6b8650b711382b9bc6070371bb97c790882cb
     name: 'Polygon',
     component: require('./components/withPolygons').default
-  }*/
-}
+  }
+}*/
 
 const createElement = (Component, props) => {
   const pathname = props.location.pathname.replace('/', '')
