@@ -33,12 +33,12 @@ class TableData extends React.Component {
 
   flipRight() {
     i= i+1;
-    this.render()
+    this.forceUpdate();
   }
 
   flipLeft() {
     i=i-1;
-    this.render()
+    this.forceUpdate();
   }
 
   refreshData() {
@@ -58,8 +58,10 @@ class TableData extends React.Component {
   }
 
   render() {
-    console.log(i);
+    console.log('rendered');
     console.log(items[i]);
+    console.log(items[i]['firstName']);
+    var nfname = items[i]['firstName'];
     return (
         <div>
           <table>
